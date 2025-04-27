@@ -26,7 +26,7 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 0.3 }}
           className="text-white text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4"
         >
-          Hi, I'm <span className="text-gray-400">Omar Abdelaziz</span>
+          Hi, I'm Omar Abdelaziz
         </motion.h1>
 
         {/* Subtitle */}
