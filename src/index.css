@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .animate-3d {
+      animation: spin3d 1s ease-out forwards;
+      animation-delay: 0.3s; 
+    }
+  
+    @keyframes spin3d {
+      0% {
+        transform: rotateY(90deg) scale(0.5);
+        opacity: 0;
+        filter: blur(2px);
+      }
+      100% {
+        transform: rotateY(0deg) scale(1);
+        opacity: 1;
+        filter: blur(0);
+      }
+    }
+  }

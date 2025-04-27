@@ -1,69 +1,64 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Navbar,
   Typography,
-  Button,
-  IconButton,
-  Collapse,
 } from "@material-tailwind/react";
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { motion } from 'framer-motion';
+
 const UserDesktopNavbar = () => {
-    const [openNav, setOpenNav] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const navItems = ["Home", "Photo", "About Me", "Contact"];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <Navbar className="bg-gray-900 text-white px-6 py-4 rounded-none">
-    <div className="container mx-auto flex items-center justify-between">
-      {/* Logo */}
-      <Typography variant="h6" className="cursor-pointer">
-        Omar Portfolio
-      </Typography>
-
-      {/* Desktop Links */}
-      <div className="hidden lg:flex items-center gap-6">
-        {navItems.map((item, index) => (
+    <Navbar
+      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+        scrolled ? 'bg-gray-900 shadow-md backdrop-blur-md' : 'bg-gray-900/80'
+      }`}
+    >
+      <div className="container mx-auto flex items-center justify-between py-2 px-4 lg:px-12">
+        {/* Logo with Framer Motion */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
+        >
           <Typography
-            key={index}
-            as="a"
-            href={`#${item.replace(/\s+/g, '').toLowerCase()}`}
-            className="font-medium hover:text-gray-400 transition"
+            variant="h4"
+            className="cursor-pointer text-white font-extrabold tracking-tight text-xl sm:text-2xl drop-shadow-[0_2px_4px_rgba(255,255,255,0.2)]"
           >
-            {item}
+            Omar <span className="text-gray-400">Portfolio</span>
           </Typography>
-        ))}
+        </motion.div>
+
+        {/* Navigation Links with Subtle Hover */}
+        <div className="flex gap-4 sm:gap-6 md:gap-8 items-center">
+          {navItems.map((item, index) => (
+            <motion.a
+              key={index}
+              href={`#${item.replace(/\s+/g, '').toLowerCase()}`}
+              className="text-white text-xs sm:text-sm md:text-base font-medium relative"
+              whileHover={{
+                scale: 1.05,
+                color: "#d1d5db", // رمادي فاتح عند الهوفر
+                transition: { type: "tween", ease: "easeInOut", duration: 0.3 },
+              }}
+            >
+              {item}
+            </motion.a>
+          ))}
+        </div>
       </div>
+    </Navbar>
+  );
+};
 
-      {/* Mobile Menu Button */}
-      <IconButton
-        variant="text"
-        className="lg:hidden text-white"
-        onClick={() => setOpenNav(!openNav)}
-      >
-        {openNav ? (
-          <XMarkIcon className="h-6 w-6" />
-        ) : (
-          <Bars3Icon className="h-6 w-6" />
-        )}
-      </IconButton>
-    </div>
-
-    {/* Mobile Menu Collapse */}
-    <Collapse open={openNav}>
-      <div className="flex flex-col gap-4 mt-4 px-4 lg:hidden">
-        {navItems.map((item, index) => (
-          <Typography
-            key={index}
-            as="a"
-            href={`#${item.replace(/\s+/g, '').toLowerCase()}`}
-            className="font-medium hover:text-gray-400 transition"
-          >
-            {item}
-          </Typography>
-        ))}
-      </div>
-    </Collapse>
-  </Navbar>
-    )
-}
-
-export default UserDesktopNavbar
+export default UserDesktopNavbar;
