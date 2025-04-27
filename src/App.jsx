@@ -1,15 +1,17 @@
 import { useState } from 'react'
 import { Button } from "@material-tailwind/react";
 import { BeakerIcon } from '@heroicons/react/24/solid'
+import {Route,Routes} from 'react-router-dom'
+import MyUser from "./pages/users/MyUsers"
+import MyAdmin from './pages/admin/MyAdmin'
 function App() {
 
   return (
     <>
-       <h1 className="text-3xl font-bold underline">
-      Hello world!
-      <Button>Button</Button>
-      <BeakerIcon className="size-6 text-blue-500" />
-    </h1>
+       <Routes>
+        <Route path='/*' element={<MyUser />} />
+        <Route path='/admin/*' element = {<MyAdmin />} />
+       </Routes>
     </>
   )
 }
