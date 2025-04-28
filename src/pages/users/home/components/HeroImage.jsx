@@ -16,7 +16,7 @@ const HeroImage = () => {
         className="hidden lg:block w-[80%] h-auto"
       >
         <motion.img
-          src="/omar.jpg"
+          src="/omarA.png"
           alt="Omar"
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}

@@ -3,7 +3,7 @@ import { FaWhatsapp, FaLinkedinIn, FaBehance, FaInstagram } from 'react-icons/fa
 
 const UserFooter = () => {
   return (
-    <footer className="bg-gray-900 py-8 px-4 flex flex-col items-center justify-center font-outfit text-center">
+    <footer className="bg-black py-8 px-4 flex flex-col items-center justify-center font-outfit text-center">
       
       {/* اللوجو او الاسم */}
       <h2 className="text-white text-2xl font-bold mb-4">Omar Abdelaziz</h2>

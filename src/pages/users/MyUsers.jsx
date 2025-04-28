@@ -10,7 +10,7 @@ import UserFooter from './components/UserFooter'
 
 const MyUsers = () => {
   return (
-    <div className=' w-full bg-blue-gray-900 h-screen'>
+    <div className=' "w-full bg-black min-h-screen"'>
       <UserDesktopNavbar/>
       <SocialMediaLinks/>
       <Routes>

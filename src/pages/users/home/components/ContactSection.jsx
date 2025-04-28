@@ -2,14 +2,14 @@ import React from 'react'
 import { Link } from "react-router-dom"
 const ContactSection = () => {
   return (
-    <section className="relative bg-gray-900 py-24 flex flex-col items-center justify-center font-outfit overflow-hidden">
+    <section className="relative bg-black py-24 flex flex-col items-center justify-center font-outfit overflow-hidden">
     {/* خلفية داكنة مدورة وراء الصورة */}
-    <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-gray-800/50 to-gray-900/90 z-0"></div>
+    <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-black/50 to-black/90 z-0"></div>
 
     {/* صورة Omar */}
     <div className="relative z-10 mb-8 animate-3d">
       <img
-        src="/omar.jpg" // خلي بالك لازم الصورة تكون موجودة فعلا في public
+        src="/omarA.png" // خلي بالك لازم الصورة تكون موجودة فعلا في public
         alt="Omar"
         className="w-48 h-48 object-cover rounded-full border-4 border-white/20 shadow-lg"
       />

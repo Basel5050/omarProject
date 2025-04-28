@@ -9,7 +9,7 @@ import ContactSection from './components/ContactSection'
 const Home = () => {
   return (
     
-    <div className='  bg-gray-900 '>
+    <div className='  bg-black '>
         <HeroSection/>
         <ServicesSection/>
         <MyWork/>

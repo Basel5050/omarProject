@@ -1,35 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaBehance, FaWhatsapp } from 'react-icons/fa';
-import Tilt from 'react-parallax-tilt';
 
 const HeroSection = () => {
+  const [showVideo, setShowVideo] = useState(false);
+  const videoUrl = "https://www.youtube.com/embed/VIDEO_ID?autoplay=1"; // حط هنا رابط الفيديو
+
   return (
-    <section className="relative h-screen bg-gray-900 flex flex-col-reverse lg:flex-row items-center justify-center font-outfit overflow-hidden">
-      
-      {/* Background Image for Mobile */}
+    <section className="relative h-screen bg-black flex items-center justify-center font-outfit overflow-hidden">
+
+      {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-20 lg:hidden"
-        style={{ backgroundImage: "url('/omar.jpg')" }}
-      ></div>
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('/omarA.png')" }}
+      />
 
-      {/* Dark overlay for better text readability on mobile */}
-      <div className="absolute inset-0 bg-black/50 lg:hidden"></div>
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/60" />
 
-      {/* Text Content */}
-      <div className="relative z-10 max-w-2xl px-6 flex flex-col justify-center items-center lg:items-start text-center lg:text-left lg:w-1/2">
-        
-        {/* Title */}
+      {/* Text & Buttons */}
+      <div className="relative z-10 max-w-2xl px-6 flex flex-col justify-center items-center text-center">
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
           className="text-white text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4"
         >
-          Hi, I'm Omar Abdelaziz
+          Omar Abdelaziz
         </motion.h1>
 
-        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -39,42 +37,20 @@ const HeroSection = () => {
           Professional Video Editor & Motion Graphic Designer
         </motion.p>
 
-        {/* Buttons */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <a href="/contact" className="px-8 py-3 bg-white text-gray-900 font-bold rounded-full text-sm sm:text-base shadow-md hover:scale-105 hover:bg-gray-200 transition-all duration-300">
-            Contact Me
-          </a>
-          <a href="/showreel" className="px-8 py-3 border border-white text-white font-bold rounded-full text-sm sm:text-base hover:bg-white hover:text-gray-900 transition-all duration-300">
+          
+          <button
+            onClick={() => setShowVideo(true)}
+            className="px-8 py-3 border border-white text-white font-bold rounded-full text-sm sm:text-base hover:bg-white hover:text-gray-900 transition-all duration-300"
+          >
             Watch Showreel
-          </a>
+            </button>
         </motion.div>
-      </div>
-
-      {/* Hero Image - Desktop Only */}
-      <div className="relative w-full h-1/2 lg:h-full lg:w-1/2 hidden lg:flex items-center justify-center p-6">
-        <Tilt
-          glareEnable={true}
-          glareMaxOpacity={0.1}
-          scale={1.02}
-          transitionSpeed={2500}
-          tiltMaxAngleX={8}
-          tiltMaxAngleY={8}
-          className="w-[80%] h-auto"
-        >
-          <motion.img
-            src="/omar.jpg"
-            alt="Omar"
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="object-cover rounded-lg shadow-xl"
-          />
-        </Tilt>
       </div>
 
       {/* Scroll Down Icon */}
@@ -91,9 +67,27 @@ const HeroSection = () => {
         </a>
       </motion.div>
 
-      {/* Social Media Icons */}
-    
-
+      {/* Video Overlay */}
+      {showVideo && (
+        <div className="absolute inset-0 bg-black/80 flex items-center justify-center z-20 p-4">
+          <div className="relative w-full max-w-3xl aspect-video">
+            <button
+              onClick={() => setShowVideo(false)}
+              className="absolute top-2 right-2 text-white text-2xl z-30"
+            >
+              &times;
+            </button>
+            <iframe
+              className="w-full h-full rounded-lg shadow-lg"
+              src={videoUrl}
+              title="Video Player"
+              frameBorder="0"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 };
