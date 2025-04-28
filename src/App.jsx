@@ -4,6 +4,7 @@ import { BeakerIcon } from '@heroicons/react/24/solid'
 import {Route,Routes} from 'react-router-dom'
 import MyUser from "./pages/users/MyUsers"
 import MyAdmin from './pages/admin/MyAdmin'
+import './app.css'
 function App() {
 
   return (

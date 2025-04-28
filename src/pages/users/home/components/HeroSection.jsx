@@ -92,20 +92,7 @@ const HeroSection = () => {
       </motion.div>
 
       {/* Social Media Icons */}
-      <div className="absolute left-5 bottom-5 flex flex-col gap-4 text-white z-10">
-        <a href="https://wa.me/201234567890" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition">
-          <FaWhatsapp size={20} />
-        </a>
-        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition">
-          <FaLinkedinIn size={20} />
-        </a>
-        <a href="https://www.behance.net/yourprofile" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition">
-          <FaBehance size={20} />
-        </a>
-        <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition">
-          <FaInstagram size={20} />
-        </a>
-      </div>
+    
 
     </section>
   );
