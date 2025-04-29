@@ -1,122 +1,146 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import ReactPlayer from 'react-player/vimeo';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
+import { FaTimes, FaPlay } from 'react-icons/fa';
 
 const videos = [
   {
-    url: "https://www.youtube.com/embed/TgHcTailbao?enablejsapi=1&origin=http://localhost:5173",
-    title: "Creative Ad Project",
-  },
+    id: '436960717',
+    hash: 'f5b9927bde',
+    title: 'Creative Ad Project',
+    thumbnail: 'https://i.vimeocdn.com/video/764297424_640.jpg',  },
+    {
+      id: '436960717',
+      hash: 'f5b9927bde',
+      title: 'Creative Ad Project',
+      thumbnail: 'https://i.vimeocdn.com/video/764297424_640.jpg',  },
+      {
+        id: '436960717',
+        hash: 'f5b9927bde',
+        title: 'Creative Ad Project',
+        thumbnail: 'https://i.vimeocdn.com/video/764297424_640.jpg',  },
+        {
+          id: '436960717',
+          hash: 'f5b9927bde',
+          title: 'Creative Ad Project',
+          thumbnail: 'https://i.vimeocdn.com/video/764297424_640.jpg',  },
   {
-    url: "https://www.youtube.com/embed/koebVg0ay7I?enablejsapi=1&origin=http://localhost:5173",
-    title: "Motion Graphics Reel",
-  },
+    id: '750432905',
+    hash: 'ab55dbe681',
+    title: 'Motion Graphics Reel',
+    thumbnail: 'https://i.vimeocdn.com/video/764297424_640.jpg',  },
   {
-    url: "https://www.youtube.com/embed/SwHv6xGGBBQ?enablejsapi=1&origin=http://localhost:5173",
-    title: "Short Film Cut",
-  },
-  {
-    url: "https://www.youtube.com/embed/Yq7Yy8H5J-8?enablejsapi=1&origin=http://localhost:5173",
-    title: "Commercial Trailer",
+    id: '764297424',
+    hash: '04309e89de',
+    title: 'Short Film Cut',
+    thumbnail: 'https://i.vimeocdn.com/video/764297424_640.jpg',
   },
 ];
 
-const MyWork = () => {
+export default function MyWork() {
   const swiperRef = useRef(null);
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
-  const stopVideos = () => {
-    const iframes = document.querySelectorAll('iframe');
-    iframes.forEach((iframe) => {
-      iframe.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
-    });
-  };
+  // لو حابّ توقف ال autoplay وانت فاتح المودال
+  useEffect(() => {
+    if (!swiperRef.current) return;
+    if (selectedVideo) swiperRef.current.autoplay.stop();
+    else swiperRef.current.autoplay.start();
+  }, [selectedVideo]);
 
-  const pauseSwiperAutoplay = () => {
-    if (swiperRef.current && swiperRef.current.autoplay) {
-      swiperRef.current.autoplay.stop();
-    }
-  };
-
-  const resumeSwiperAutoplay = () => {
-    if (swiperRef.current && swiperRef.current.autoplay) {
-      swiperRef.current.autoplay.start();
-    }
-  };
+  const onSlideChange = useCallback(() => {
+    // لو غيرت السلايد وانت فاتح مودال، يقفل المودال
+    setSelectedVideo(null);
+  }, []);
 
   return (
-    <section id="mywork" className="bg-black w-full py-20 px-6 flex flex-col items-center font-outfit">
-      <h2 className="text-white text-4xl font-bold mb-12">My Work</h2>
+    <section className="bg-black py-16 px-4 flex flex-col items-center">
+      <h2 className="text-white text-4xl font-extrabold mb-12">My Work</h2>
 
       <Swiper
-  modules={[Navigation, Pagination, Autoplay]}
-  spaceBetween={40}
-  centeredSlides={true}
-  slidesPerView={'auto'}
-  navigation
-  pagination={{
-    clickable: true,
-  }}
-  autoplay={{
-    delay: 0,                 // مفيش انتظار
-    disableOnInteraction: false,
-  }}
-  speed={5000}                // الانتقال ياخد 5 ثواني ➔ حركة مستمرة ناعمة
-  loop={true}
-  onSlideChange={() => stopVideos()}
-  onSwiper={(swiper) => (swiperRef.current = swiper)}
-  className="max-w-7xl w-full pb-32 relative"
->
-        {videos.map((video, index) => (
-          <SwiperSlide
-            key={index}
-            className="flex flex-col items-center group animate-3d"
-            style={{ width: '600px' }}
-          >
-            {/* Video Card */}
-            <div className="relative w-full aspect-[2.39/1] overflow-hidden rounded-3xl bg-white/5 backdrop-blur-md shadow-[0_20px_60px_rgba(0,0,0,0.5)] border border-gray-400/30 group-hover:border-white/50 transition-all duration-700 ease-in-out">
-              <iframe
-                src={video.url}
-                title={video.title}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                loading="lazy"
-                className="w-full h-full rounded-3xl group-hover:scale-105 transition-transform duration-700 ease-in-out"
-                onLoad={(e) => {
-                  const player = e.target.contentWindow;
-                  player.postMessage('{"event":"listening","id":1}', '*');
-                  window.addEventListener('message', (event) => {
-                    if (event.data && typeof event.data === "string" && event.data.includes('{"event":"infoDelivery"')) {
-                      if (event.data.includes('"playerState":1')) {
-                        pauseSwiperAutoplay(); // لو الفيديو بدأ
-                      }
-                      if (event.data.includes('"playerState":2') || event.data.includes('"playerState":0')) {
-                        resumeSwiperAutoplay(); // لو الفيديو وقف
-                      }
-                    }
-                  });
-                }}
-              ></iframe>
-
-              {/* Glow عند Hover */}
-              <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-10 transition-all duration-500 rounded-3xl pointer-events-none"></div>
-            </div>
-
-            {/* Caption تحت الفيديو */}
-            <div className="mt-6 text-center">
-              <h3 className="text-white text-lg font-semibold opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
-                {video.title}
-              </h3>
+        modules={[Navigation, Pagination, Autoplay]}
+        spaceBetween={30}
+        centeredSlides
+        slidesPerView="auto"
+        loop
+        speed={8000}
+        autoplay={{ delay: 0, disableOnInteraction: false, pauseOnMouseEnter: true }}
+        navigation
+        pagination={{ clickable: true }}
+        onSwiper={s => (swiperRef.current = s)}
+        onSlideChange={onSlideChange}
+        className="w-full max-w-6xl"
+        breakpoints={{
+          640: { slidesPerView: 1.2 },
+          768: { slidesPerView: 1.5 },
+          1024: { slidesPerView: 2.2 },
+          1280: { slidesPerView: 3 },
+        }}
+      >
+        {videos.map((v, i) => (
+          <SwiperSlide key={i} className="flex justify-center">
+            <div
+              className="w-full max-w-lg bg-gray-800 rounded-3xl overflow-hidden shadow-2xl
+                         group relative cursor-pointer transform hover:-translate-y-2 transition-all duration-500"
+              onClick={() => setSelectedVideo(v)}
+            >
+              <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
+                <img
+                  src={v.thumbnail}
+                  alt={v.title}
+                  className="absolute inset-0 w-full h-full object-cover
+                             group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 flex items-center justify-center
+                                bg-black bg-opacity-40 opacity-0 group-hover:opacity-100
+                                transition-opacity duration-300">
+                  <FaPlay className="text-white text-5xl" />
+                </div>
+              </div>
+              <div className="absolute bottom-0 w-full py-3 px-4
+                              bg-gradient-to-t from-black to-transparent">
+                <h3 className="text-white text-xl font-semibold text-center">
+                  {v.title}
+                </h3>
+              </div>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
+
+      {/* — Fullscreen Modal */}
+      {selectedVideo && (
+        <div
+          className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
+          onClick={() => setSelectedVideo(null)}
+        >
+          <div
+            className="relative w-full max-w-4xl"
+            style={{ paddingTop: '56.25%' }} // يحافظ على النسبة 16:9
+          >
+            <button
+              className="absolute top-2 right-2 text-white text-3xl z-10"
+              onClick={() => setSelectedVideo(null)}
+            >
+              <FaTimes />
+            </button>
+            <div className="absolute inset-0">
+              <ReactPlayer
+                url={`https://player.vimeo.com/video/${selectedVideo.id}?h=${selectedVideo.hash}&autoplay=1`}
+                width="100%"
+                height="100%"
+                controls
+                playing
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
-};
-
-export default MyWork;
+}

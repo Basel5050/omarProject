@@ -8,12 +8,15 @@ import './app.css'
 function App() {
 
   return (
-    <>
-       <Routes>
+    <div className='w-full h-screen'>
+      <Routes>
         <Route path='/*' element={<MyUser />} />
         <Route path='/admin/*' element = {<MyAdmin />} />
        </Routes>
-    </>
+
+    </div>
+       
+    
   )
 }
 

@@ -3,28 +3,28 @@ import { motion } from 'framer-motion';
 import { FaVideo, FaMagic } from 'react-icons/fa';
 import Tilt from 'react-parallax-tilt';
 import { SparklesIcon } from '@heroicons/react/24/outline';
+import { Link, useNavigate } from 'react-router-dom';
 
 const services = [
   {
     title: "Video Editing",
     description: "Professional video editing that brings ideas to life.",
     icon: <FaVideo />,
-    link: "/video-editing",
+    link: "/portfolio/videoediting",
   },
   {
     title: "Motion Graphics",
     description: "Creative motion design to enhance visual storytelling.",
     icon: <FaMagic />,
-    link: "/motion-graphics",
+    link: "/portfolio/motiongraphics",
   },
   {
     title: "Logo Animation",
     description: "Unique animated logos that capture your brand's identity.",
     icon: <SparklesIcon />,
-    link: "/logo-animation",
+    link: "/portfolio/logoanimation",
   }
 ];
-
 const MyServices = () => {
   return (
     <section
@@ -68,12 +68,12 @@ const MyServices = () => {
               </p>
 
               {/* Button */}
-              <a
-                href={service.link}
+              <Link
+                to={service.link}
                 className="px-5 py-2 bg-gradient-to-r from-white to-gray-300 text-gray-900 rounded-full text-xs sm:text-sm font-semibold hover:scale-105 hover:from-gray-300 hover:to-white transition-all duration-300"
               >
                 See My Work
-              </a>
+              </Link>
             </Tilt>
           </motion.div>
         ))}

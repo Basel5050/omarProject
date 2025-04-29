@@ -5,6 +5,7 @@ import HeroImage from './components/HeroImage'
 import ServicesSection from './components/ServicesSection'
 import MyWork from './components/MyWork'
 import ContactSection from './components/ContactSection'
+import Logos from './components/Logos'
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
     <div className='  bg-black '>
         <HeroSection/>
         <ServicesSection/>
+        <Logos/>
         <MyWork/>
         <ContactSection/>
     </div>
