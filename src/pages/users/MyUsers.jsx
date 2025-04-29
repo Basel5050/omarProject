@@ -24,7 +24,7 @@ const MyUsers = () => {
         <Route path='portfolio/videoediting' element= {<VideoEditing/>} />
         <Route path='portfolio/logoanimation' element= {<LogoAnimation/>} />
 
-        <Route path='contactme' element= {<ContactMe/>} />
+        <Route path='contact-me' element= {<ContactMe/>} />
       </Routes>
       <UserFooter/>
     </div>
