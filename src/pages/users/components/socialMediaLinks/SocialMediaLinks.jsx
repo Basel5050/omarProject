@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaBehance, FaWhatsapp } from 'react-icons/fa';
+//done
 const SocialMediaLinks = () => {
   return (
     <div className="fixed left-5 bottom-5 flex flex-col gap-4 text-white z-10">

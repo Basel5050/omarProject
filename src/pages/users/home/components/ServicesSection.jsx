@@ -16,6 +16,13 @@ const ServicesSection = () => {
   >
     What I Do ?
   </motion.h1>
+  <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.7 }}
+            className="text-white m-10 p-32 text-sm sm:text-base md:text-lg mb-8"
+          >
+I am a professional video editor and motion designer, dedicated to crafting visually striking stories with a blend of creativity and precision. Every cut, transition, and animation is thoughtfully executed to deliver impactful and memorable content. I look forward to collaborating with you to create outstanding work that captures attention and leaves a lasting impression.          </motion.p>
 
   {/* الكومبوننت بتاع الخدمات */}
   <MyServices />

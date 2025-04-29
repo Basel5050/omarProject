@@ -27,7 +27,7 @@ const UserDesktopNavbar = () => {
         transition-all duration-500 font-outfit border-b border-white/10
         ${scrolled
           ? "bg-black/80 shadow-md backdrop-blur-md"
-          : "bg-black/40 backdrop-blur-sm"
+          : "bg-transparent "
         }
       `}
     >

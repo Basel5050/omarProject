@@ -4,7 +4,7 @@ import { FaVideo, FaMagic } from 'react-icons/fa';
 import Tilt from 'react-parallax-tilt';
 import { SparklesIcon } from '@heroicons/react/24/outline';
 import { Link, useNavigate } from 'react-router-dom';
-
+// done
 const services = [
   {
     title: "Video Editing",
