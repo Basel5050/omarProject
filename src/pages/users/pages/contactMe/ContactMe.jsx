@@ -31,22 +31,22 @@ const ContactMe = () => {
         viewport={{ once: true }}
         className="mb-10 flex flex-wrap justify-center gap-6 text-white text-3xl"
       >
-        <a href="https://wa.me/201234567890" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition duration-300 text-green-500">
+        <a href="https://wa.me/201113503504" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition duration-300 text-green-500">
           <FaWhatsapp />
         </a>
-        <a href="mailto:your@email.com" className="hover:scale-110 transition duration-300 text-blue-400">
+        <a href="omarazizhassan7@gmail.com" className="hover:scale-110 transition duration-300 text-blue-400">
           <FaEnvelope />
         </a>
-        <a href="https://www.tiktok.com/@yourusername" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition duration-300 text-white">
+        <a href="https://www.tiktok.com/@omariinho1?_t=ZS-8vwxV5KatIG&_r=1" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition duration-300 text-white">
           <FaTiktok />
         </a>
-        <a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition duration-300 text-pink-500">
+        <a href="https://www.instagram.com/omar_dinho" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition duration-300 text-pink-500">
           <FaInstagram />
         </a>
-        <a href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition duration-300 text-blue-600">
+        <a href="https://www.linkedin.com/in/omar-abd-el-aziz-919646286/" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition duration-300 text-blue-600">
           <FaLinkedin />
         </a>
-        <a href="https://www.behance.net/yourusername" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition duration-300 text-blue-500">
+        <a href="https://www.behance.net/omarabdaziz" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition duration-300 text-blue-500">
           <FaBehance />
         </a>
       </motion.div>

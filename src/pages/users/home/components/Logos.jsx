@@ -11,7 +11,13 @@ const logos = [
   '/logo-06.webp',
   '/logo-07.webp',
   '/logo-08.webp',
-  '/logo-09.webp',
+  '/logo-10.webp',
+  '/logo-11.webp',
+  '/logo-12.webp',
+  '/logo-13.webp',
+  '/logo-14.webp',
+  '/logo-15.webp',
+  
 ];
 
 const clientsCount = 300;

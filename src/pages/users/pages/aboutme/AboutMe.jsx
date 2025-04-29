@@ -1,5 +1,6 @@
 import { Card, CardBody, CardHeader, Typography } from "@material-tailwind/react";
 import { motion } from "framer-motion";
+import { Link } from 'react-router-dom';
 
 const AboutMe = () => {
   return (
@@ -61,9 +62,14 @@ const AboutMe = () => {
         viewport={{ once: true }}
         className="mt-10 flex justify-center"
       >
+        <Link 
+        to={"https://wa.me/201113503504"}
+        >
         <button className="bg-white text-black font-semibold py-3 px-8 rounded-full hover:bg-gray-200 transition duration-300 shadow-md">
           Let’s Work Together
         </button>
+        </Link>
+        
       </motion.div>
     </div>
   );

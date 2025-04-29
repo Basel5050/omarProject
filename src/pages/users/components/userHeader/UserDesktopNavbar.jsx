@@ -39,20 +39,18 @@ const UserDesktopNavbar = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
         >
-          <Typography
-            variant="h5"
-            className="
-              cursor-pointer text-white font-bold tracking-tight
-              text-lg sm:text-xl md:text-2xl
-              drop-shadow-[0_2px_4px_rgba(255,255,255,0.2)]
-            "
-          >
-          </Typography>
+           <Link to="/" className="block">
+            <img
+              src="/omarLogo.png"
+              alt="Omar Logo"
+              className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain"
+            />
+          </Link>
         </motion.div>
 
         {/* Navigation Links */}
-        <div className="flex flex-wrap justify-evenly items-center gap-x-4 gap-y-2 max-w-[90%] mx-auto">
-        {navItems.map((item, idx) => (
+        <div className="flex gap-2 sm:gap-4 md:gap-6 items-center">
+          {navItems.map((item, idx) => (
             <motion.div
               key={idx}
               whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
