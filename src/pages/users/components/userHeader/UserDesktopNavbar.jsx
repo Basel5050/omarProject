@@ -47,13 +47,12 @@ const UserDesktopNavbar = () => {
               drop-shadow-[0_2px_4px_rgba(255,255,255,0.2)]
             "
           >
-            Omar Abdelaziz
           </Typography>
         </motion.div>
 
         {/* Navigation Links */}
-        <div className="flex gap-2 sm:gap-4 md:gap-6 items-center">
-          {navItems.map((item, idx) => (
+        <div className="flex flex-wrap justify-evenly items-center gap-x-4 gap-y-2 max-w-[90%] mx-auto">
+        {navItems.map((item, idx) => (
             <motion.div
               key={idx}
               whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
