@@ -40,7 +40,7 @@ const Logos = () => {
       {/* Logos Grid */}
       <div className="flex flex-wrap justify-evenly items-center gap-8 sm:gap-10 max-w-7xl mx-auto">
         {logos.map((src, i) => (
-          <div key={i} className="w-20 sm:w-44 md:w-48">
+          <div key={i} className="w-28 sm:w-48 md:w-52">
             <img
               src={src}
               alt={`Partner ${i}`}

@@ -32,42 +32,46 @@ const UserDesktopNavbar = () => {
       `}
     >
       {/* wrapper داخلي للعناصر */}
-      <div className="flex w-full items-center justify-between py-2 sm:py-3 px-4 sm:px-6 md:px-8 lg:px-12">
+      <div className="relative flex w-full items-center justify-between py-1 px-2 sm:px-4 md:px-6 lg:px-10 overflow-visible">
         {/* Logo */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          className="absolute -top-6 -left-6 sm:-top-8 sm:-left-8 z-50"
         >
-           <Link to="/" className="block">
-            <img
+          <Link to="/" className="block">
+            <motion.img
               src="/omarLogo.png"
               alt="Omar Logo"
-              className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="h-20 sm:h-24 md:h-24 p-4 w-auto object-contain drop-shadow-[0_4px_10px_rgba(255,255,255,0.25)]"
             />
           </Link>
         </motion.div>
 
         {/* Navigation Links */}
-        <div className="flex gap-2 sm:gap-4 md:gap-6 items-center">
-          {navItems.map((item, idx) => (
-            <motion.div
-              key={idx}
-              whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
-            >
-              <Link
-                to={item.link}
-                className="
-                  text-white font-medium
-                  text-xs sm:text-sm md:text-base
-                  hover:text-gray-300 transition-colors duration-300
-                "
-              >
-                {item.label}
-              </Link>
-            </motion.div>
-          ))}
-        </div>
+        <div className="flex flex-wrap items-center justify-end ml-auto gap-x-4 gap-y-2">
+  {navItems.map((item, idx) => (
+    <motion.div
+      key={idx}
+      whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+    >
+      <Link
+        to={item.link}
+        className="
+          text-white font-medium
+          text-xs sm:text-sm md:text-base
+          hover:text-gray-300 transition-colors duration-300
+        "
+      >
+        {item.label}
+      </Link>
+    </motion.div>
+  ))}
+</div>
       </div>
     </Navbar>
   );
