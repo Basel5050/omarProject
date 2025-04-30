@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Navbar, Typography } from "@material-tailwind/react";
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import Logo from '../logo/Logo';
 
 const UserDesktopNavbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -40,16 +41,7 @@ const UserDesktopNavbar = () => {
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           className="absolute -top-6 -left-6 sm:-top-8 sm:-left-8 z-50"
         >
-          <Link to="/" className="block">
-            <motion.img
-              src="/omarLogo.png"
-              alt="Omar Logo"
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="h-20 sm:h-24 md:h-24 p-4 w-auto object-contain drop-shadow-[0_4px_10px_rgba(255,255,255,0.25)]"
-            />
-          </Link>
+          <Logo/>
         </motion.div>
 
         {/* Navigation Links */}

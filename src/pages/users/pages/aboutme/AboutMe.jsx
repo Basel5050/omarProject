@@ -35,7 +35,7 @@ const AboutMe = () => {
             <img
               src="/omarA.png"
               alt="About Me"
-              className="h-fit w-fit object-cover"
+              className="h-full w-full  object-cover"
             />
           </CardHeader>
           <CardBody className="text-center space-y-6">
