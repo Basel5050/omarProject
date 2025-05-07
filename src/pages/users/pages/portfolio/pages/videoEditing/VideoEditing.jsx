@@ -1,33 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactPlayer from 'react-player/vimeo';
 import { FaTimes, FaPlay } from 'react-icons/fa';
+import { useDispatch, useSelector } from 'react-redux';
+import { getVideos } from "../../../../../../redux/slices/videoSlice";
 
 
 
 
-const videos = [
-    {
-      title: 'Creative Ad Project',
-      
-      thumbnail: 'https://i.vimeocdn.com/video/764297424_640.jpg',
-      url: 'https://player.vimeo.com/video/764297424?h=04309e89de',
-    },
-    {
-      title: 'Motion Graphics Reel',
-      
-      thumbnail: 'https://i.vimeocdn.com/video/764297424_640.jpg',
-      url: 'https://player.vimeo.com/video/764297424?h=04309e89de',
-    },
-    {
-      title: 'Short Film Cut',
-      thumbnail: 'https://i.vimeocdn.com/video/764297424_640.jpg',
-      url: 'https://player.vimeo.com/video/764297424?h=04309e89de',
-    },
-    // ... فيديوهات إضافية
-  ];
 const VideoEditing = () => {
   const [selected, setSelected] = useState(null);
-  
+  const {videosData}= useSelector((state)=>state.videos)
+      const dispatch = useDispatch()
+      useEffect(()=>{
+        dispatch(getVideos())
+      },[dispatch])
     return (
       <div className="font-outfit bg-black text-white min-h-screen">
         {/* ====== Hero-like Banner (moved down for navbar) ====== */}
@@ -49,7 +35,7 @@ const VideoEditing = () => {
   
           {/* flex-wrap gallery */}
           <div className="flex flex-wrap justify-evenly gap-8">
-            {videos.map((vid, idx) => (
+            {videosData.map((vid, idx) => (
               <div
                 key={idx}
                 className="relative w-[280px] h-[160px] overflow-hidden rounded-xl cursor-pointer group"

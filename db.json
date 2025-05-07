@@ -1,0 +1,82 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "name": "Omar Abdelaziz",
+      "email": "omar@gmail.com",
+      "password": "1234567",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "name": "basel",
+      "email": "basel@gmail.com",
+      "password": 1234567,
+      "role": "admin"
+    }
+  ],
+  "logoAnimation": [
+    {
+      "id": 1,
+      "title": "logo",
+      "thumbnail": "https://i.vimeocdn.com/video/764297424_640.jpg",
+      "url": "https://player.vimeo.com/video/764297424?h=04309e89de"
+    }
+  ],
+  "motionGraphics": [
+    {
+      "id": 1,
+      "title": "motion",
+      "thumbnail": "https://i.vimeocdn.com/video/764297424_640.jpg",
+      "url": "https://player.vimeo.com/video/764297424?h=04309e89de"
+    }
+  ],
+  "videoEditing": [
+    {
+      "id": 1,
+      "title": "video",
+      "thumbnail": "https://i.vimeocdn.com/video/764297424_640.jpg",
+      "url": "https://player.vimeo.com/video/764297424?h=04309e89de"
+    },
+    {
+      "title": "Motion Graphics Reel",
+      "thumbnail": "https://i.vimeocdn.com/video/764297424_640.jpg",
+      "url": "https://player.vimeo.com/video/764297424?h=04309e89de",
+      "id": 2
+    }
+    
+  ],
+  "lastWork" : [
+    {
+        "id": 1,
+        "title": "video",
+        "thumbnail": "https://i.vimeocdn.com/video/764297424_640.jpg",
+        "url": "https://player.vimeo.com/video/764297424?h=04309e89de"
+
+  },  {
+    "id": 2,
+    "title": "video",
+    "thumbnail": "https://i.vimeocdn.com/video/764297424_640.jpg",
+    "url": "https://player.vimeo.com/video/764297424?h=04309e89de"
+
+},  {
+  "id": 3,
+  "title": "video",
+  "thumbnail": "https://i.vimeocdn.com/video/764297424_640.jpg",
+  "url": "https://player.vimeo.com/video/764297424?h=04309e89de"
+
+},  {
+  "id": 4,
+  "title": "video",
+  "thumbnail": "https://i.vimeocdn.com/video/764297424_640.jpg",
+  "url": "https://player.vimeo.com/video/764297424?h=04309e89de"
+
+},  {
+  "id": 5,
+  "title": "video",
+  "thumbnail": "https://i.vimeocdn.com/video/764297424_640.jpg",
+  "url": "https://player.vimeo.com/video/764297424?h=04309e89de"
+
+}]
+  
+}

@@ -1,29 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactPlayer from 'react-player/vimeo';
 import { FaTimes, FaPlay } from 'react-icons/fa';
+import { useDispatch, useSelector } from 'react-redux';
+import { getMotion } from "../../../../../../redux/slices/motionSlice";
 
-const videos = [
-    {
-      title: 'Creative Ad Project',
-      
-      thumbnail: 'https://i.vimeocdn.com/video/764297424_640.jpg',
-      url: 'https://player.vimeo.com/video/764297424?h=04309e89de',
-    },
-    {
-      title: 'Motion Graphics Reel',
-      
-      thumbnail: 'https://i.vimeocdn.com/video/764297424_640.jpg',
-      url: 'https://player.vimeo.com/video/764297424?h=04309e89de',
-    },
-    {
-      title: 'Short Film Cut',
-      thumbnail: 'https://i.vimeocdn.com/video/764297424_640.jpg',
-      url: 'https://player.vimeo.com/video/764297424?h=04309e89de',
-    },
-    // ... فيديوهات إضافية
-  ];
+
 const MotionGraphics = () => {
     const [selected, setSelected] = useState(null);
+    const {motionData}= useSelector((state)=>state.motionGraphics)
+    const dispatch = useDispatch()
+    useEffect(()=>{
+      dispatch(getMotion())
+    },[dispatch])
 
   return (
     <div className="font-outfit bg-black text-white min-h-screen">
@@ -46,7 +34,7 @@ const MotionGraphics = () => {
 
         {/* flex-wrap gallery */}
         <div className="flex flex-wrap justify-evenly gap-8">
-          {videos.map((vid, idx) => (
+          {motionData.map((vid, idx) => (
             <div
               key={idx}
               className="relative w-[280px] h-[160px] overflow-hidden rounded-xl cursor-pointer group"

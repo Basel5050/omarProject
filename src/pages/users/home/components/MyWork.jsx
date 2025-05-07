@@ -7,44 +7,18 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import { FaTimes, FaPlay } from 'react-icons/fa';
+import { useDispatch, useSelector } from 'react-redux';
+import { getLastWork } from "../../../../redux/slices/lastWrokSlice";
 
-const videos = [
-  {
-    id: '436960717',
-    hash: 'f5b9927bde',
-    title: 'Creative Ad Project',
-    thumbnail: 'https://i.vimeocdn.com/video/764297424_640.jpg',  },
-    {
-      id: '436960717',
-      hash: 'f5b9927bde',
-      title: 'Creative Ad Project',
-      thumbnail: 'https://i.vimeocdn.com/video/764297424_640.jpg',  },
-      {
-        id: '436960717',
-        hash: 'f5b9927bde',
-        title: 'Creative Ad Project',
-        thumbnail: 'https://i.vimeocdn.com/video/764297424_640.jpg',  },
-        {
-          id: '436960717',
-          hash: 'f5b9927bde',
-          title: 'Creative Ad Project',
-          thumbnail: 'https://i.vimeocdn.com/video/764297424_640.jpg',  },
-  {
-    id: '750432905',
-    hash: 'ab55dbe681',
-    title: 'Motion Graphics Reel',
-    thumbnail: 'https://i.vimeocdn.com/video/764297424_640.jpg',  },
-  {
-    id: '764297424',
-    hash: '04309e89de',
-    title: 'Short Film Cut',
-    thumbnail: 'https://i.vimeocdn.com/video/764297424_640.jpg',
-  },
-];
 
 export default function MyWork() {
   const swiperRef = useRef(null);
   const [selectedVideo, setSelectedVideo] = useState(null);
+   const {lastData}= useSelector((state)=>state.latestWork)
+        const dispatch = useDispatch()
+        useEffect(()=>{
+          dispatch(getLastWork())
+        },[dispatch])
 
   // لو حابّ توقف ال autoplay وانت فاتح المودال
   useEffect(() => {
@@ -82,7 +56,7 @@ export default function MyWork() {
           1280: { slidesPerView: 3 },
         }}
       >
-        {videos.map((v, i) => (
+        {lastData.map((v, i) => (
           <SwiperSlide key={i} className="flex justify-center">
             <div
               className="w-full max-w-lg bg-gray-800 rounded-3xl overflow-hidden shadow-2xl
