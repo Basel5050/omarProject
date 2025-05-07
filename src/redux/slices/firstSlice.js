@@ -60,7 +60,12 @@ const firstSlice = createSlice({
       })
       .addCase(getUsers.fulfilled, (state, action) => {
         state.userLoading = false;
-        state.userData = action.payload;
+  // Force convert to array if possible
+  state.userData = Array.isArray(action.payload)
+    ? action.payload
+    : Array.isArray(action.payload.data)
+    ? action.payload.data
+    : [];
       })
       .addCase(getUsers.rejected, (state, action) => {
         state.userLoading = false;
