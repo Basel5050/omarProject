@@ -4,6 +4,8 @@ import { getVideos } from "../../../../redux/slices/videoSlice";
 import axios from "axios";
 import Swal from "sweetalert2";
 const ControlVideo = () => {
+  const videoEditingURL = import.meta.env.VITE_VIDEOEDITING_URL;
+
     const dispatch = useDispatch();
     const { videosData, VideosLoading } = useSelector((state) => state.videos);
     const [formData, setFormData] = useState({ title: "", thumbnail: "", url: "" });
@@ -24,17 +26,18 @@ const ControlVideo = () => {
   
       try {
         if (editId) {
-          await axios.put(`http://localhost:3000/videoEditing/${editId}`, formData);
+          await axios.put(`${videoEditingURL}/${editId}`, formData);
           Swal.fire("Updated", "Video updated successfully", "success");
           setEditId(null);
         } else {
-          await axios.post("http://localhost:3000/videoEditing", formData);
+          await axios.post(videoEditingURL, formData);
           Swal.fire("Added", "Video added successfully", "success");
         }
         setFormData({ title: "", thumbnail: "", url: "" });
         dispatch(getVideos());
       } catch (err) {
-        Swal.fire("Error", err.message, "error");
+        console.log(err);
+        
       }
     };
   
@@ -55,7 +58,7 @@ const ControlVideo = () => {
       });
       if (confirm.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:3000/videoEditing/${id}`);
+          await axios.delete(`${videoEditingURL}/${id}`);
           dispatch(getVideos());
           Swal.fire("Deleted!", "Video has been deleted.", "success");
         } catch (err) {

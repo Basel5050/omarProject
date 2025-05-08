@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 
 
 const LastWork = () => {
+  const lastWorkUrl= import.meta.env.VITE_LASTWORK_URL;
     const dispatch = useDispatch();
     const { lastData, lastLoading } = useSelector((state) => state.latestWork);
     const [formData, setFormData] = useState({ title: "", thumbnail: "", url: "" });
@@ -26,11 +27,11 @@ const LastWork = () => {
   
       try {
         if (editId) {
-          await axios.put(`http://localhost:3000/videoEditing/${editId}`, formData);
+          await axios.put(`${lastWorkUrl}/${editId}`, formData);
           Swal.fire("Updated", "Video updated successfully", "success");
           setEditId(null);
         } else {
-          await axios.post("http://localhost:3000/videoEditing", formData);
+          await axios.post(lastWorkUrl, formData);
           Swal.fire("Added", "Video added successfully", "success");
         }
         setFormData({ title: "", thumbnail: "", url: "" });
@@ -57,7 +58,7 @@ const LastWork = () => {
       });
       if (confirm.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:3000/videoEditing/${id}`);
+          await axios.delete(`${lastWorkUrl}/${id}`);
           dispatch(getLastWork());
           Swal.fire("Deleted!", "Video has been deleted.", "success");
         } catch (err) {

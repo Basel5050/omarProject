@@ -4,6 +4,7 @@ import { getLogo } from "../../../../redux/slices/logoSlice";
 import axios from "axios";
 import Swal from "sweetalert2";
 const ControlLogo = () => {
+  const logoUrl=import.meta.env.VITE_LOGOANIMATION_URL
     const dispatch = useDispatch();
     const { logoData, logoLoading } = useSelector((state) => state.logoAnimation);
     const [formData, setFormData] = useState({ title: "", thumbnail: "", url: "" });
@@ -24,11 +25,11 @@ const ControlLogo = () => {
   
       try {
         if (editId) {
-          await axios.put(`http://localhost:3000/videoEditing/${editId}`, formData);
+          await axios.put(`${logoUrl}/${editId}`, formData);
           Swal.fire("Updated", "Video updated successfully", "success");
           setEditId(null);
         } else {
-          await axios.post("http://localhost:3000/videoEditing", formData);
+          await axios.post(logoUrl, formData);
           Swal.fire("Added", "Video added successfully", "success");
         }
         setFormData({ title: "", thumbnail: "", url: "" });
@@ -55,7 +56,7 @@ const ControlLogo = () => {
       });
       if (confirm.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:3000/videoEditing/${id}`);
+          await axios.delete(`${logoUrl}/${id}`);
           dispatch(getLogo());
           Swal.fire("Deleted!", "Video has been deleted.", "success");
         } catch (err) {

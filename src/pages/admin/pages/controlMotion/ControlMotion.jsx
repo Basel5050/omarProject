@@ -4,6 +4,7 @@ import { getMotion } from "../../../../redux/slices/motionSlice";
 import axios from "axios";
 import Swal from "sweetalert2";
 const ControlMotion = () => {
+ const  motionurl =import.meta.env.VITE_MOTIONGRAPHICS_URL
     const dispatch = useDispatch();
     const { motionData, motionLoading } = useSelector((state) => state.motionGraphics);
     const [formData, setFormData] = useState({ title: "", thumbnail: "", url: "" });
