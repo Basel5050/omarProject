@@ -25,11 +25,11 @@ const ControlMotion = () => {
   
       try {
         if (editId) {
-          await axios.put(`http://localhost:3000/videoEditing/${editId}`, formData);
+          await axios.put(`${motionurl}/${editId}`, formData);
           Swal.fire("Updated", "Video updated successfully", "success");
           setEditId(null);
         } else {
-          await axios.post("http://localhost:3000/videoEditing", formData);
+          await axios.post(motionurl, formData);
           Swal.fire("Added", "Video added successfully", "success");
         }
         setFormData({ title: "", thumbnail: "", url: "" });
@@ -56,7 +56,7 @@ const ControlMotion = () => {
       });
       if (confirm.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:3000/videoEditing/${id}`);
+          await axios.delete(`${motionurl}/${id}`);
           dispatch(getMotion());
           Swal.fire("Deleted!", "Video has been deleted.", "success");
         } catch (err) {
