@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ReactPlayer from 'react-player/vimeo';
+import ReactPlayer from 'react-player';
 import { FaTimes, FaPlay } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMotion } from "../../../../../../redux/slices/motionSlice";
