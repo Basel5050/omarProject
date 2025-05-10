@@ -14,7 +14,7 @@ const ServicesSection = () => {
         viewport={{ once: true }}
         className="text-white text-4xl sm:text-5xl font-extrabold mb-8 tracking-wide drop-shadow-[0_0_10px_rgba(255,255,255,0.15)]"
       >
-        What I Do?
+       <span className="text-gradient bg-gradient-to-r  from-white to-cyan-900 bg-clip-text text-transparent">What</span>  I Do?
       </motion.h1>
 
       {/* Paragraph */}

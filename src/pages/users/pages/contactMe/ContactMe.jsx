@@ -10,9 +10,9 @@ const ContactMe = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="text-4xl font-bold text-white mb-6 text-center font-sans"
+        className="text-7xl font-bold text-white mb-6 text-center font-sans"
       >
-        Contact Me
+        Contact <span className="text-gradient bg-gradient-to-r  from-white to-cyan-900 bg-clip-text text-transparent">Me</span> 
       </motion.h2>
 
       <motion.div

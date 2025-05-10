@@ -33,7 +33,7 @@ const Logos = () => {
     <section className="bg-black py-20 px-4 sm:px-6 font-outfit">
       <div className="max-w-7xl mx-auto text-center mb-16">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 uppercase tracking-wider">
-          Our Partners
+        <span className="text-gradient bg-gradient-to-r  from-white to-cyan-900 bg-clip-text text-transparent">Our</span> Partners
         </h2>
       </div>
 
