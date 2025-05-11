@@ -11,7 +11,7 @@ const AboutMe = () => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="sticky top-28 self-start flex justify-center md:justify-start"
+          className="md:sticky top-28 self-start flex justify-center md:justify-start"
         >
           <div className="relative w-64 h-64 rounded-full overflow-hidden shadow-lg shadow-white/10 border border-gray-700">
             <img
