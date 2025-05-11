@@ -7,7 +7,7 @@ const UserFooter = () => {
   return (
     <footer className="bg-black py-8 px-4 flex flex-col items-center justify-center font-outfit text-center">
       
-      {/* اللوجو او الاسم */}
+      
       <Link to="/" className="block">
             <motion.img
               src="/omarLogo.png"
@@ -20,21 +20,21 @@ const UserFooter = () => {
           </Link>
       {/* Social Media Links */}
       <div className="flex gap-6 mb-6">
-        <a href="https://wa.me/201113503504" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition">
+        <a href="https://wa.me/201113503504" target="_blank" rel="noopener noreferrer" className="text-[#b43a3b] hover:text-[#f53848] transition">
           <FaWhatsapp size={20} />
         </a>
-        <a href="https://www.linkedin.com/in/omar-abd-el-aziz-919646286/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition">
+        <a href="https://www.linkedin.com/in/omar-abd-el-aziz-919646286/" target="_blank" rel="noopener noreferrer" className="text-[#b43a3b] hover:text-[#f53848] transition">
           <FaLinkedinIn size={20} />
         </a>
-        <a href="https://www.behance.net/omarabdaziz" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition">
+        <a href="https://www.behance.net/omarabdaziz" target="_blank" rel="noopener noreferrer" className="text-[#b43a3b] hover:text-[#f53848] transition">
           <FaBehance size={20} />
         </a>
-        <a href="https://www.instagram.com/omar_dinho" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition">
+        <a href="https://www.instagram.com/omar_dinho" target="_blank" rel="noopener noreferrer" className="text-[#b43a3b] hover:text-[#f53848] transition">
           <FaInstagram size={20} />
         </a>
       </div>
 
-      {/* حقوق محفوظة */}
+      
       <p className="text-gray-500 text-xs">
         © {new Date().getFullYear()} Omar Portfolio. All rights reserved.
       </p>

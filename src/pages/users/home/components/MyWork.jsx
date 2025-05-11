@@ -34,7 +34,7 @@ export default function MyWork() {
 
   return (
     <section className="bg-black py-16 px-4 flex flex-col items-center">
-      <h2 className="text-white text-7xl font-extrabold mb-12"> <span className="text-gradient bg-gradient-to-r  from-white to-cyan-900 bg-clip-text text-transparent">Latest</span> Work</h2>
+      <h2 className="text-white text-5xl font-extrabold mb-12"> <span className="text-gradient bg-gradient-to-r  from-white to-cyan-900 bg-clip-text text-transparent">Latest</span> Work</h2>
 
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}

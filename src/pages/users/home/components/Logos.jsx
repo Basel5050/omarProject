@@ -21,7 +21,7 @@ const logos = [
 ];
 
 const clientsCount = 150;
-const projectsCount = 300;
+const projectsCount = 550;
 
 const Logos = () => {
   const [statsRef, inView] = useInView({
