@@ -92,6 +92,27 @@ const MangeData = () => {
           </Link>
         </CardBody>
       </Card>
+      {/* logo */}
+      <Card className="bg-gradient-to-tr from-[#f3e8e2] to-[#fef9f5] shadow-lg rounded-3xl border border-[#e7d6c9] hover:scale-[1.01] transition-transform duration-300">
+        <CardBody className="p-8 flex flex-col justify-between h-full">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="bg-[#8b5e3c] text-white p-4 rounded-2xl shadow">
+              <FaUsers className="text-2xl" />
+            </div>
+            <Typography variant="h4" className="text-[#3e2f2f] font-bold text-2xl">
+              showreel
+            </Typography>
+          </div>
+          <Typography className="text-[#6e5543] mb-6 text-lg">
+            Manage all users, control access, and view activity.
+          </Typography>
+          <Link to="/admin/showreel">
+            <Button size="lg" className="bg-[#8b5e3c] hover:bg-[#744a2e] text-white rounded-xl px-6">
+              Manage
+            </Button>
+          </Link>
+        </CardBody>
+      </Card>
 
     </div>
   )

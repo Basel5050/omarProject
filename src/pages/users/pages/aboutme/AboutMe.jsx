@@ -37,11 +37,10 @@ const AboutMe = () => {
               Who is <span className="text-gradient bg-gradient-to-r from-white to-cyan-900 bg-clip-text text-transparent">Omar</span>?
             </h2>
             <ul className="text-gray-300 space-y-4 text-lg leading-relaxed">
-              <li>🎬 Remote Post-Production Lead & Video Editor with 7+ years of experience.</li>
-              <li>🌍 Worked with leading brands in Egypt and GCC on cinematic projects.</li>
-              <li>🧠 Specializes in high-end motion graphics and video storytelling.</li>
-              <li>👥 Team leader with strong creative direction and workflow management.</li>
-              <li>🚀 Capable of handling full production pipelines from start to finish.</li>
+              <li>🎬 Over 7 years of experience in post-production and video editing.</li>
+              <li>🌍 I’ve collaborated with top brands in Egypt and Saudi Arabia on innovative high-end video editing projects.</li>
+              <li>🧠 Specializing in advanced editing and high-quality motion graphics.</li>
+              <li>🚀  am capable of turning concepts into an engaging visual story across all stages of production.</li>
             </ul>
           </motion.div>
 
@@ -56,11 +55,10 @@ const AboutMe = () => {
               Why <span className="text-gradient bg-gradient-to-r  from-white to-cyan-900 bg-clip-text text-transparent">Omar</span>?
             </h2>
             <div className="text-gray-300 text-lg leading-relaxed space-y-4">
-              <p>🎯 Bringing ideas to life with a clear vision, technical expertise, and leadership.</p>
-              <p>🎞️ Expert in <strong>After Effects, Premiere Pro</strong>, and advanced motion techniques.</p>
-              <p>⚙️ Strong ability to manage and optimize workflows for efficient, high-quality output.</p>
-              <p>🤝 Skilled in team collaboration, delegation, and maintaining creative consistency across all project stages.</p>
-              <p>🔥 Adept at working under pressure, meeting tight deadlines, and delivering impactful visuals.</p>
+              <p>🎯 Bringing ideas to life with a clear vision and technical expertise.</p>
+              <p>🎞️ Proficient in <strong>After Effects, Premiere Pro</strong>, always up-to-date with the latest cutting-edge editing.</p>
+              <p>🔥 Skilled in thriving under pressure, meeting tight deadlines, and delivering impactful visual content.</p>
+              <p>🌍 Flexible and open to travel, able to adapt to various work environments and project needs.</p>
               <p className="font-semibold text-white">If you're looking for a creative leader who understands every step of the production process — I'm the one.</p>
             </div>
 

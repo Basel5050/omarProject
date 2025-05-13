@@ -6,6 +6,7 @@ import ControlVideo from '../controlVideo/ControlVideo'
 import ControlMotion from '../controlMotion/ControlMotion'
 import ControlLogo from '../controlLogoAnimation/ControlLogo'
 import LastWork from '../lastWork/LastWork'
+import ControlShowReel from '../controlShowReel/controlShowReel'
 
 const AdminHome = () => {
   return (
@@ -17,6 +18,7 @@ const AdminHome = () => {
 <Route path='control-motion' element= {<ControlMotion/>} />
 <Route path='control-logo' element= {<ControlLogo/>} />
 <Route path='control-last' element= {<LastWork/>} />
+<Route path='showreel' element= {<ControlShowReel/>} />
 
 </Routes>
 

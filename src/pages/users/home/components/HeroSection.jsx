@@ -1,9 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useDispatch, useSelector } from 'react-redux';
+import { getShowreelLink } from '../../../../redux/slices/showReelSlice';
 
 const HeroSection = () => {
+  const { showreelLink, showreelLoading, showreelErr } = useSelector((state) => state.myShowreel);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getShowreelLink());
+  }, [dispatch]);
+
   const [showVideo, setShowVideo] = useState(false);
-  const videoUrl = "https://www.youtube.com/embed/VIDEO_ID?autoplay=1"; // حط هنا رابط الفيديو
+
+  // لما تضغط برّه الـ iframe الفيديو يتقفل
+  const handleOverlayClick = (e) => {
+    if (e.target.id === 'overlay') {
+      setShowVideo(false);
+    }
+  };
 
   return (
     <section className="relative h-screen bg-black flex items-center justify-center font-outfit overflow-hidden">
@@ -43,14 +58,18 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 1 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          
           <button
             onClick={() => setShowVideo(true)}
-            className="px-8 py-3 border border-white text-white font-bold rounded-full text-sm sm:text-base hover:bg-white hover:text-gray-900 transition-all duration-300"
+            disabled={showreelLoading || !showreelLink}
+            className="px-8 py-3 border border-white text-white font-bold rounded-full text-sm sm:text-base hover:bg-white hover:text-gray-900 transition-all duration-300 disabled:opacity-50"
           >
-            Watch Showreel
-            </button>
+            {showreelLoading ? "Loading..." : "Watch Showreel"}
+          </button>
         </motion.div>
+
+        {showreelErr && (
+          <p className="text-red-500 mt-4 text-sm">{showreelErr}</p>
+        )}
       </div>
 
       {/* Scroll Down Icon */}
@@ -69,22 +88,34 @@ const HeroSection = () => {
 
       {/* Video Overlay */}
       {showVideo && (
-        <div className="absolute inset-0 bg-black/80 flex items-center justify-center z-20 p-4">
-          <div className="relative w-full max-w-3xl aspect-video">
+        <div
+          id="overlay"
+          onClick={handleOverlayClick}
+          className="absolute inset-0 bg-black/80 flex items-center justify-center z-20 p-4"
+        >
+          <div className="relative w-full max-w-3xl aspect-video" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setShowVideo(false)}
               className="absolute top-2 right-2 text-white text-2xl z-30"
             >
               &times;
             </button>
-            <iframe
-              className="w-full h-full rounded-lg shadow-lg"
-              src={videoUrl}
-              title="Video Player"
-              frameBorder="0"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-            />
+
+            {/* Spinner أثناء التحميل */}
+            {showreelLoading ? (
+              <div className="w-full h-full flex items-center justify-center">
+                <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-white"></div>
+              </div>
+            ) : (
+              <iframe
+                className="w-full h-full rounded-lg shadow-lg"
+                src={`${showreelLink.url}?autoplay=1`}
+                title="Showreel Video"
+                frameBorder="0"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+              />
+            )}
           </div>
         </div>
       )}
