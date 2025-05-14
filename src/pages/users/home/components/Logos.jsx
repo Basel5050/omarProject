@@ -37,7 +37,7 @@ const Logos = () => {
         </h2>
       </div>
 
-      {/* Logos Grid */}
+      
       <div className="flex flex-wrap justify-evenly items-center gap-8 sm:gap-10 max-w-7xl mx-auto">
         {logos.map((src, i) => (
           <div key={i} className="w-20 sm:w-48 md:w-52">
@@ -50,7 +50,7 @@ const Logos = () => {
         ))}
       </div>
 
-      {/* Counters */}
+     
       <div
         ref={statsRef}
         className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 text-center mt-20 px-4"

@@ -41,11 +41,11 @@ const firstSlice = createSlice({
         state.adminIsLogged = true;
         localStorage.setItem("id", foundUser.id);
         state.userErrMsg = "";
-        console.log('log');
+        
       } else {
         state.adminIsLogged = false;
         state.userErrMsg = "Invalid email or password";
-        console.log('not');
+        
       }
     },
     logout: (state) => {

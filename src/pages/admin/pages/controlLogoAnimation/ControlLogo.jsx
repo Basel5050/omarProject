@@ -69,7 +69,7 @@ const ControlLogo = () => {
       <div className="p-4 max-w-6xl mx-auto">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Admin Panel - Videos</h2>
   
-        {/* Form */}
+        
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-6">
           <input
             type="text"

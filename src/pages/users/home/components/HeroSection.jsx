@@ -15,7 +15,6 @@ const HeroSection = () => {
 
   const [showVideo, setShowVideo] = useState(false);
 
-  // لما تضغط برّه الـ iframe الفيديو يتقفل
   const handleOverlayClick = (e) => {
     if (e.target.id === 'overlay') {
       setShowVideo(false);
@@ -25,16 +24,16 @@ const HeroSection = () => {
   return (
     <section className="relative h-screen bg-black flex items-center justify-center font-outfit overflow-hidden">
 
-      {/* Background Image */}
+      
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: "url('/omarA.png')" }}
       />
 
-      {/* Dark overlay */}
+      
       <div className="absolute inset-0 bg-black/60" />
 
-      {/* Text & Buttons */}
+      
       <div className="relative z-10 max-w-2xl px-6 flex flex-col justify-center items-center text-center">
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
@@ -74,7 +73,7 @@ const HeroSection = () => {
         )}
       </div>
 
-      {/* Scroll Down Icon */}
+      
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -88,7 +87,7 @@ const HeroSection = () => {
         </a>
       </motion.div>
 
-      {/* Video Overlay */}
+      
       {showVideo && (
         <div
           id="overlay"
@@ -103,7 +102,7 @@ const HeroSection = () => {
               &times;
             </button>
 
-            {/* Spinner أثناء التحميل */}
+            
             {showreelLoading ? (
               <div className="w-full h-full flex items-center justify-center">
                 <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-white"></div>

@@ -31,7 +31,7 @@ const UserDesktopNavbar = () => {
         }
       `}
     >
-      {/* wrapper داخلي للعناصر */}
+     
       <div className="relative flex w-full items-center justify-between py-1 px-2 sm:px-4 md:px-6 lg:px-10 overflow-visible">
         {/* Logo */}
         <motion.div

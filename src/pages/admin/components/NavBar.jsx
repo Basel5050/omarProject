@@ -21,7 +21,7 @@ const AdminNavBar = () => {
     const navigate = useNavigate();
   
     const handleLogout = () => {
-      // احذف بيانات المستخدم وسجّل الخروج
+     
       localStorage.clear();
       navigate("/");
     };

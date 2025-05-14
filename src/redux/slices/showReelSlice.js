@@ -30,7 +30,7 @@ const showreel = createSlice({
         builder.addCase(getShowreelLink.fulfilled, (state,action)=>{
             state.showreelLoading = false
             state.showreelLink = action.payload
-            console.log(state.showreelLink);
+            ;
             
         }),
         builder.addCase(getShowreelLink.rejected,(state,action)=>{

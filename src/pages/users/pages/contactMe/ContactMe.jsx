@@ -1,6 +1,6 @@
 import {
   Card,
-  CardBody,
+  
   Typography,
   Button,
 } from "@material-tailwind/react";
@@ -8,11 +8,7 @@ import { motion } from "framer-motion";
 import {
   FaWhatsapp,
   FaEnvelope,
-  FaTiktok,
-  FaInstagram,
-  FaLinkedin,
-  FaBehance,
-  FaPhoneAlt,
+  
   
 } from "react-icons/fa";
 
@@ -43,7 +39,7 @@ const ContactMe = () => {
 
   return (
     <div className="min-h-screen bg-black py-32 px-4 sm:px-8 flex flex-col items-center font-outfit">
-    {/* Title */}
+    
     <motion.h2
       initial={{ opacity: 0, y: -30 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -57,7 +53,7 @@ const ContactMe = () => {
       </span>
     </motion.h2>
   
-    {/* Line */}
+    
     <motion.div
       initial={{ width: 0 }}
       whileInView={{ width: "80px" }}
@@ -66,7 +62,7 @@ const ContactMe = () => {
       className="h-1 bg-white rounded-full mb-16"
     ></motion.div>
   
-    {/* Contact Cards */}
+    
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}

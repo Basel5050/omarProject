@@ -6,7 +6,7 @@ const ServicesSection = () => {
   return (
     <div className="bg-black py-20 px-6 flex flex-col items-center font-outfit text-center">
       
-      {/* Heading */}
+      
       <motion.h1
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -17,7 +17,7 @@ const ServicesSection = () => {
        What I<span className="text-gradient bg-gradient-to-r  from-white to-cyan-900 bg-clip-text text-transparent">Do</span>  ?
       </motion.h1>
 
-      {/* Paragraph */}
+      
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -28,7 +28,7 @@ const ServicesSection = () => {
         I am a professional video editor and motion designer, dedicated to crafting visually striking stories with a blend of creativity and precision. Every cut, transition, and animation is thoughtfully executed to deliver impactful and memorable content. I look forward to collaborating with you to create outstanding work that captures attention and leaves a lasting impression.
       </motion.p>
 
-      {/* خدماتي */}
+      
       <MyServices />
     </div>
   );

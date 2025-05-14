@@ -2,7 +2,7 @@ import React from 'react'
 import MyServices from '../../components/myServices/MyServices';
 
 const Portfolio = () => {
-    console.log("porto");
+    
     
   return (
 <div className="min-h-screen bg-black py-20 px-6 flex flex-col items-center font-outfit">

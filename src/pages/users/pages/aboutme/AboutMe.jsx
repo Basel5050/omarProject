@@ -6,7 +6,7 @@ const AboutMe = () => {
     <section className="min-h-screen bg-black py-24 px-6 font-outfit text-white flex justify-center items-center">
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-16 items-start">
         
-        {/* Sticky Image Section */}
+        
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -23,10 +23,10 @@ const AboutMe = () => {
           </div>
         </motion.div>
 
-        {/* Text Content */}
+        
         <div className="flex flex-col gap-20 text-left">
 
-          {/* Section 1: Who is Omar */}
+          
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -44,7 +44,7 @@ const AboutMe = () => {
             </ul>
           </motion.div>
 
-          {/* Section 2: Why Omar */}
+          
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

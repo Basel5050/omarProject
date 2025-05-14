@@ -11,7 +11,7 @@ import { getUsers, logincheck } from './redux/slices/firstSlice';
 
 function App() {
 const {adminIsLogged}=useSelector((state)=>state.omar)
-console.log(adminIsLogged);
+;
 const dispatch = useDispatch()
 useEffect(()=>{
   dispatch(logincheck())
