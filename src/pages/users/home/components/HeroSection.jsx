@@ -8,7 +8,9 @@ const HeroSection = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getShowreelLink());
+    dispatch(getShowreelLink())
+    console.log(showreelLink);
+    ;
   }, [dispatch]);
 
   const [showVideo, setShowVideo] = useState(false);
